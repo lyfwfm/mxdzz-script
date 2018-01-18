@@ -15,14 +15,14 @@ end
   end
   
   -- 是否在开始观战界面
-  x, y = findColorInRegionFuzzy(0xece0d3, 95, 426,256, 426,256, 0, 0)
+ x, y = findColorInRegionFuzzy(0x181a18, 95, 61,317, 61,317, 0, 0)
 if x > -1 then
 return 2
 end
   
   
   -- 是否在商品推荐界面 点击(79,662)
-  x, y = findColorInRegionFuzzy(0xd22325, 95, 583,582, 583,582, 0, 0)
+  x, y = findColorInRegionFuzzy(0xd22325, 95, 576,504, 576,504, 0, 0)
   if x > -1 then
     return 4
   end
