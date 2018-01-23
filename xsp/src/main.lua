@@ -1,5 +1,8 @@
 init("0", 1); --以当前应用 Home 键在右边初始化
 
+
+-- version 2.0
+
 -- 判断是在什么界面
 function checkGetDisplay()
   -- 是否在主界面
@@ -26,6 +29,16 @@ end
   if x > -1 then
     return 4
   end
+	
+	-- 防守成功界面
+	x, y = findColorInRegionFuzzy(0xffffff, 95, 736,231, 736,231, 0, 0)
+if x > -1 then
+return 6
+end
+x, y = findColorInRegionFuzzy(0x472f28, 95, 634, 162, 634, 162, 0, 0)
+if x > -1 then
+return 7
+end
   
   return 5
   
@@ -61,6 +74,18 @@ while true do
     touchDown(1, 79,662)
     mSleep(50)
     touchUp(1, 79,662)  
+		elseif display == 6 then
+    -- 防守成功界面 点击(642,634)
+    mSleep(50)
+    touchDown(1, 642,634)
+    mSleep(50)
+    touchUp(1, 642,634) 
+		elseif display == 7 then
+    -- 玩家直升界面 点击(642,634)
+    mSleep(50)
+    touchDown(1, 642,634)
+    mSleep(50)
+    touchUp(1, 642,634) 
   else
     mSleep(50)
   end
