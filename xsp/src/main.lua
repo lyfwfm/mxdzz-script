@@ -6,13 +6,13 @@ init("0", 1); --以当前应用 Home 键在右边初始化
 -- 判断是在什么界面
 function checkGetDisplay()
   -- 是否在主界面
- x, y = findColorInRegionFuzzy(0xdcbd9c, 95, 1121,43, 1121,43, 0, 0)
+ x, y = findColorInRegionFuzzy(0xffffff, 95, 1227,41, 1227,41, 0, 0)
 if x > -1 then
-return 1
+	return 1
 end
 	
 	-- 是否在战斗结束界面
-  x, y = findColorInRegionFuzzy(0xfeefbf, 95, 639,624, 639,624, 0, 0)
+  x, y = findColorInRegionFuzzy(0xd22325, 95, 639,624, 639,624, 0, 0)
   if x > -1 then
     return 3
   end
@@ -38,6 +38,10 @@ end
 x, y = findColorInRegionFuzzy(0x472f28, 95, 634, 162, 634, 162, 0, 0)
 if x > -1 then
 return 7
+end
+x, y = findColorInRegionFuzzy(0xafb9bf, 95, 177,252, 177,252, 0, 0)
+if x > -1 then
+return 8
 end
   
   return 5
@@ -86,6 +90,12 @@ while true do
     touchDown(1, 642,634)
     mSleep(50)
     touchUp(1, 642,634) 
+		elseif display == 8 then
+    -- 商品推荐界面 点击(79,662)
+    mSleep(50)
+    touchDown(1, 79,662)
+    mSleep(50)
+    touchUp(1, 79,662) 
   else
     mSleep(50)
   end
